@@ -171,10 +171,10 @@ function BackgroundDecor() {
 function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/70 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8 xl:max-w-[88rem]">
-        <a href="#top" className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8 xl:max-w-[88rem]">
+        <a href="#top" className="flex items-center gap-2.5 sm:gap-3">
           <ParkRadarLogo compact />
-          <div>
+          <div className="hidden sm:block">
             <p className="text-xs text-white/45">Намирай паркиране по-бързо</p>
           </div>
         </a>
@@ -188,7 +188,7 @@ function Navbar() {
 
         <a
           href="#waitlist"
-          className="rounded-full border border-cyan-300/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:border-cyan-300/50 hover:bg-cyan-300/10"
+          className="rounded-full border border-cyan-300/30 bg-white/5 px-4 py-2 text-xs font-semibold text-cyan-300 transition hover:border-cyan-300/50 hover:bg-cyan-300/10 sm:px-5 sm:py-2.5 sm:text-sm"
         >
           Запиши се
         </a>
@@ -200,21 +200,21 @@ function Navbar() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-16 pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-24 lg:pt-24 xl:max-w-[88rem] xl:grid-cols-[1fr_0.92fr] xl:gap-24 xl:pb-28 xl:pt-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-24 xl:max-w-[88rem] xl:grid-cols-[1fr_0.92fr] xl:gap-24 xl:pb-28 xl:pt-28">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm text-cyan-200 shadow-[0_0_25px_rgba(34,211,238,0.08)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-3 py-1.5 text-xs text-cyan-200 shadow-[0_0_25px_rgba(34,211,238,0.08)] sm:px-4 sm:py-2 sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             Реален продуктов преглед
           </div>
 
-          <h1 className="mt-6 max-w-3xl text-5xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 max-w-3xl text-[2.7rem] font-black leading-[1.02] tracking-tight text-white sm:mt-6 sm:text-5xl lg:text-7xl">
             Спри да обикаляш в кръг.
             <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
               Намери място за под 1 минута.
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/74 sm:text-xl">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/74 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl">
             ParkRadar помага на шофьорите да откриват свободни места по-бързо с карта на живо, актуализации от общността, награди и моментални насоки за паркиране.
           </p>
 
@@ -233,15 +233,15 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 grid max-w-[46rem] gap-4 md:grid-cols-3 xl:max-w-[50rem] xl:gap-5">
+          <div className="mt-10 grid max-w-[46rem] gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:max-w-[50rem] xl:gap-5">
             <MetricCard icon="map" value="Карта" label="Свободни места" />
             <MetricCard icon="rewards" value="Награди" label="Точки и доверие" />
             <MetricCard icon="activity" value="Активност" label="История на сигнали" />
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[400px] xl:max-w-[440px]">
-          <div className="absolute -inset-12 rounded-full bg-cyan-400/12 blur-3xl" />
+        <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] xl:max-w-[440px]">
+          <div className="absolute -inset-8 rounded-full bg-cyan-400/12 blur-3xl sm:-inset-12" />
           <div className="relative z-10">
             <PhoneFrame image={mapPreview} alt="Преглед на картата на живо в ParkRadar" />
           </div>
@@ -253,7 +253,7 @@ function Hero() {
 
 function MetricCard({ icon, value, label }) {
   return (
-    <div className="relative overflow-hidden rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-5 text-left shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:p-6">
+    <div className="relative overflow-hidden rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-5 text-left shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:min-h-[11.5rem] sm:p-6">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
       <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.12)]">
         <HeroMetricIcon kind={icon} />
@@ -270,9 +270,9 @@ function MetricCard({ icon, value, label }) {
 
 function PhoneFrame({ image, alt }) {
   return (
-    <div className="mx-auto w-full max-w-[360px] rounded-[2.8rem] border border-white/10 bg-[#0a1020] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+    <div className="mx-auto w-full max-w-[320px] rounded-[2.4rem] border border-white/10 bg-[#0a1020] p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.42)] sm:max-w-[360px] sm:rounded-[2.8rem] sm:p-3 sm:shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
       <div className="relative overflow-hidden rounded-[2.3rem] border border-white/10 bg-black">
-        <div className="absolute left-1/2 top-0 z-20 h-7 w-36 -translate-x-1/2 rounded-b-[1.2rem] bg-black" />
+        <div className="absolute left-1/2 top-0 z-20 h-6 w-28 -translate-x-1/2 rounded-b-[1rem] bg-black sm:h-7 sm:w-36 sm:rounded-b-[1.2rem]" />
         <img src={image} alt={alt} className="block h-auto w-full object-cover" loading="lazy" />
       </div>
     </div>
@@ -281,8 +281,8 @@ function PhoneFrame({ image, alt }) {
 
 function TrustBar() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-4 lg:px-8 xl:max-w-[88rem]">
-      <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-5 backdrop-blur-xl">
+    <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 xl:max-w-[88rem]">
+      <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-5 py-5 backdrop-blur-xl sm:px-6">
         <div className="flex flex-col gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p className="text-sm text-white/68">Създадено за шофьори, които искат по-бързи решения за паркиране, реална обратна връзка и по-чист начин за ориентиране в града.</p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/35 sm:justify-end">
@@ -317,7 +317,7 @@ function Features() {
   ]
 
   return (
-    <section id="features" className="mx-auto max-w-7xl px-6 py-24 lg:px-8 xl:max-w-[88rem]">
+    <section id="features" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 xl:max-w-[88rem]">
       <div className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Основни функции</p>
         <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Истински продукт, не просто идея</h2>
@@ -326,11 +326,11 @@ function Features() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3 xl:gap-8">
+      <div className="mt-12 grid gap-6 lg:grid-cols-3 xl:gap-8">
         {items.map((item) => (
           <div
             key={item.title}
-            className="group flex min-h-[22rem] flex-col rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-7 text-left shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:border-cyan-300/30 hover:bg-white/[0.065]"
+            className="group flex min-h-[20rem] flex-col rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-6 text-left shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:border-cyan-300/30 hover:bg-white/[0.065] sm:min-h-[22rem] sm:p-7"
           >
             <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-2xl shadow-[0_0_30px_rgba(34,211,238,0.12)]">
               {item.icon}
@@ -365,7 +365,7 @@ function HowItWorks() {
 
   return (
     <section id="how" className="relative border-y border-white/10 bg-white/[0.03]">
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 xl:max-w-[88rem]">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 xl:max-w-[88rem]">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Как работи</p>
           <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Бързо, полезно и лесно за разбиране</h2>
@@ -373,7 +373,7 @@ function HowItWorks() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {steps.map((step) => (
-            <div key={step.number} className="flex min-h-[20rem] flex-col rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(11,18,34,0.96),rgba(11,18,34,0.88))] p-7 shadow-[0_15px_50px_rgba(0,0,0,0.18)]">
+            <div key={step.number} className="flex min-h-[18rem] flex-col rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(11,18,34,0.96),rgba(11,18,34,0.88))] p-6 shadow-[0_15px_50px_rgba(0,0,0,0.18)] sm:min-h-[20rem] sm:p-7">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-black tracking-[0.28em] text-cyan-300">{step.number}</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/50">Лесно</span>
@@ -401,7 +401,7 @@ function Showcase() {
   }
 
   return (
-    <section id="showcase" className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 xl:max-w-[88rem] xl:py-28">
+    <section id="showcase" className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 xl:max-w-[88rem] xl:py-28">
       <div className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Преглед на приложението</p>
         <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Реални снимки от приложението</h2>
@@ -410,8 +410,8 @@ function Showcase() {
         </p>
       </div>
 
-      <div className="mt-14 grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] xl:grid-cols-[0.84fr_1.16fr] xl:gap-16">
-        <div className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-7 shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl xl:p-9">
+      <div className="mt-14 grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:grid-cols-[0.84fr_1.16fr] xl:gap-16">
+        <div className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-5 shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:p-7 xl:p-9">
           <div className="flex items-start justify-between gap-6">
             <div>
               <h3 className="text-3xl font-black text-white">{currentShot.title}</h3>
@@ -419,7 +419,7 @@ function Showcase() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:gap-4" role="tablist" aria-label="Слайдове за преглед на приложението">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:gap-4" role="tablist" aria-label="Слайдове за преглед на приложението">
             {showcaseShots.map((shot, index) => (
               <button
                 key={shot.title}
@@ -440,14 +440,14 @@ function Showcase() {
           </div>
         </div>
 
-        <div className="relative isolate mx-auto w-full max-w-[30rem] overflow-hidden rounded-[2.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(9,15,28,0.96),rgba(5,8,22,0.98))] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)] [perspective:1400px] sm:p-6 xl:max-w-[34rem] xl:p-7">
+        <div className="relative isolate mx-auto w-full max-w-[22rem] overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(9,15,28,0.96),rgba(5,8,22,0.98))] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.32)] [perspective:1400px] sm:max-w-[30rem] sm:rounded-[2.5rem] sm:p-6 xl:max-w-[34rem] xl:p-7">
           <div className="absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_38%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent)]" />
 
           <button
             type="button"
             onClick={showPrevious}
             aria-label="Покажи предишния екран"
-            className="absolute left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#08111f]/84 text-white backdrop-blur-xl transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+            className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#08111f]/84 text-white backdrop-blur-xl transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300/60 sm:left-3 sm:h-12 sm:w-12"
           >
             <span className="text-2xl leading-none">‹</span>
           </button>
@@ -456,23 +456,23 @@ function Showcase() {
             type="button"
             onClick={showNext}
             aria-label="Покажи следващия екран"
-            className="absolute right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#08111f]/84 text-white backdrop-blur-xl transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+            className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#08111f]/84 text-white backdrop-blur-xl transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300/60 sm:right-3 sm:h-12 sm:w-12"
           >
             <span className="text-2xl leading-none">›</span>
           </button>
 
-          <div className="relative z-10 min-h-[34rem] [transform-style:preserve-3d] sm:min-h-[38rem] lg:min-h-[42rem] xl:min-h-[46rem]">
+          <div className="relative z-10 min-h-[24rem] [transform-style:preserve-3d] sm:min-h-[38rem] lg:min-h-[42rem] xl:min-h-[46rem]">
             {showcaseShots.map((shot, index) => {
               const offset = getWrappedOffset(index, activeIndex, showcaseShots.length)
 
               return (
                 <div
                   key={shot.title}
-                  className={`absolute inset-x-5 top-1/2 -translate-y-1/2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:inset-x-6 ${Math.abs(offset) <= 1 ? 'block' : 'hidden'}`}
+                  className={`absolute inset-x-2 top-1/2 -translate-y-1/2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:inset-x-6 ${Math.abs(offset) <= 1 ? 'block' : 'hidden'}`}
                   style={getCarouselCardStyle(offset)}
                   aria-hidden={offset !== 0}
                 >
-                  <div className="mx-auto w-full max-w-[22rem] sm:max-w-[24rem] xl:max-w-[26rem]">
+                    <div className="mx-auto w-full max-w-[16rem] sm:max-w-[24rem] xl:max-w-[26rem]">
                     <PhoneFrame image={shot.image} alt={shot.title} />
                   </div>
                 </div>
@@ -480,7 +480,7 @@ function Showcase() {
             })}
           </div>
 
-          <div className="relative z-10 mt-3 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-[#08111f]/72 px-4 py-3 backdrop-blur-xl">
+          <div className="relative z-10 mt-2 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-[#08111f]/72 px-4 py-2.5 backdrop-blur-xl sm:mt-3 sm:py-3">
             {showcaseShots.map((shot, index) => (
               <button
                 key={shot.title}
@@ -506,16 +506,16 @@ function SocialProof() {
   ]
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 xl:max-w-[88rem]">
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 xl:max-w-[88rem]">
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="rounded-[1.85rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-300/12 via-sky-400/8 to-blue-500/12 p-8 shadow-[0_25px_80px_rgba(56,189,248,0.12)] sm:p-10">
+        <div className="rounded-[1.85rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-300/12 via-sky-400/8 to-blue-500/12 p-6 shadow-[0_25px_80px_rgba(56,189,248,0.12)] sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">Защо се отличава</p>
           <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">Силна концепция с видима продуктова дълбочина</h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/74">
             Приложението не е само за намиране на място. То добавя доверие между потребителите, награди, история и преки пътища, които правят изживяването по-полезно с времето.
           </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
             <Stat value="На живо" label="видимост на местата" />
             <Stat value="Награди" label="точки и значки" />
             <Stat value="Доверие" label="качествени сигнали" />
@@ -524,7 +524,7 @@ function SocialProof() {
 
         <div className="grid gap-4 content-start">
           {testimonials.map((quote, index) => (
-            <div key={index} className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-6 text-lg leading-8 text-white/78 shadow-[0_10px_35px_rgba(0,0,0,0.12)] backdrop-blur-xl">
+            <div key={index} className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-5 text-base leading-7 text-white/78 shadow-[0_10px_35px_rgba(0,0,0,0.12)] backdrop-blur-xl sm:p-6 sm:text-lg sm:leading-8">
               {quote}
             </div>
           ))}
@@ -541,7 +541,7 @@ function Stat({ value, label }) {
       <div className="text-[1.25rem] font-black leading-[1.08] text-white sm:text-[1.35rem] xl:text-[1.45rem]">
         {value}
       </div>
-      <div className="mt-3 max-w-[14ch] text-[0.95rem] leading-6 text-white/72 sm:text-[0.98rem]">
+      <div className="mt-3 max-w-[16ch] text-[0.95rem] leading-6 text-white/72 sm:max-w-[14ch] sm:text-[0.98rem]">
         {label}
       </div>
     </div>
@@ -550,22 +550,22 @@ function Stat({ value, label }) {
 
 function FinalCTA() {
   return (
-    <section id="waitlist" className="pb-24 xl:pb-28">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-12 lg:p-14">
+    <section id="waitlist" className="pb-20 sm:pb-24 xl:pb-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 text-center shadow-[0_30px_100px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:rounded-[2.25rem] sm:p-12 lg:p-14">
           <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-cyan-300/12 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl" />
 
           <div className="relative">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Ранен достъп</p>
-            <h2 className="mt-3 text-3xl font-black text-white sm:text-5xl">
+            <h2 className="mt-3 text-[2.2rem] font-black leading-[1.02] text-white sm:text-5xl">
               Бъди сред първите при старта на ParkRadar
             </h2>
-            <p className="mx-auto mt-5 max-w-[55rem] text-center text-lg leading-8 text-white/72">
+            <p className="mx-auto mt-5 max-w-[40rem] text-center text-base leading-7 text-white/72 sm:text-lg sm:leading-8">
               Събери интерес още сега, валидирай идеята и превърни реалното търсене в първата версия на продукта.
             </p>
 
-            <form onSubmit={(e) => e.preventDefault()} className="mx-auto mt-8 grid w-full max-w-[28rem] grid-cols-1 justify-items-center gap-4 sm:max-w-[46rem] sm:grid-cols-[34rem_11rem] sm:justify-center sm:gap-5">
+            <form onSubmit={(e) => e.preventDefault()} className="mx-auto mt-8 grid w-full max-w-[28rem] grid-cols-1 justify-items-center gap-4 sm:max-w-[46rem] sm:grid-cols-[minmax(0,34rem)_11rem] sm:justify-center sm:gap-5">
               <input
                 type="email"
                 placeholder="Въведи своя имейл"
@@ -590,7 +590,7 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="border-t border-white/10 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-white/42 lg:flex-row lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-white/42 sm:px-6 lg:flex-row lg:px-8 lg:text-left">
         <p>© 2026 ParkRadar. Всички права запазени.</p>
         <div className="flex gap-6">
           <a href="#" className="transition hover:text-white">Поверителност</a>
